@@ -5,7 +5,10 @@ Author: Jonathan Kamens (<jik@kamens.us>)
 
 Currently supported GNOME shell version(s): 3.38
 
-Home page: https://github.com/jikamens/allow-locked-remote-desktop
+[Home page][homepage] [GNOME Shell Extensions page][extpage]
+
+[homepage]: https://github.com/jikamens/allow-locked-remote-desktop
+[extpage]: https://extensions.gnome.org/extension/4338/allow-locked-remote-desktop/
 
 Purpose
 -------
@@ -36,9 +39,9 @@ disabled or uninstalled, they aren't. It's that simple!
 Credits
 -------
 This extension uses the workaround suggested by Elliott Sales de
-Andrade [here][1].
+Andrade [here][workaround].
 
-[1]: https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/3212#note_992252
+[workaround]: https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/3212#note_992252
 
 Copyright
 ---------
