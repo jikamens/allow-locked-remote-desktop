@@ -1,9 +1,10 @@
 {
   "name": "Allow Locked Remote Desktop",
   "description": "Allow remote desktop connections when the screen is locked",
-  "version": 1,
+  "version": 2,
   "uuid": "allowlockedremotedesktop@kamens.us",
   "shell-version": [
-    "3.38"
+    "3.38",
+    "40"
   ]
 }
