@@ -3,7 +3,7 @@ Allow Locked Remote Desktop GNOME Shell Extension
 
 Author: Jonathan Kamens (<jik@kamens.us>)
 
-Currently supported GNOME shell version(s): 3.38
+Currently supported GNOME shell version(s): 3.38, 40, 41
 
 [Home page][homepage] [GNOME Shell Extensions page][extpage]
 
