@@ -41,6 +41,12 @@ class Extension {
     }
 
     disable() {
+        // We want to keep running while locked since the whole point of this
+        // extension is to keep allowing remote desktop connections while
+        // locked.
+        if (Main.sessionMode.isLocked) {
+            return;
+        }
         if (this.orig) {
             global.backend.get_remote_access_controller().
                 inhibit_remote_access = this.orig;
