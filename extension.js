@@ -25,14 +25,14 @@ class Extension {
     }
 
     enable() {
-        if (! this.orig) {
-            this.orig = global.backend.get_remote_access_controller().
-                inhibit_remote_access;
-            global.backend.get_remote_access_controller().
-                inhibit_remote_access = () => {};
-            log("Remote desktop connections while screen is locked are " +
-                "now ENABLED");
-        }
+        if (this.orig)
+            return;
+        this.orig = global.backend.get_remote_access_controller().
+            inhibit_remote_access;
+        global.backend.get_remote_access_controller().
+            inhibit_remote_access = () => {};
+        log("Remote desktop connections while screen is locked are " +
+            "now ENABLED");
     }
 
     disable() {
@@ -40,13 +40,13 @@ class Extension {
         // "unlock-dialog" is included in "session-modes" in metada.json. This
         // is necessary because the whole point of this extension is to allow
         // remote desktop connections when the screen is locked.
-        if (this.orig) {
-            global.backend.get_remote_access_controller().
-                inhibit_remote_access = this.orig;
-            this.orig = null;
-            log("Remote desktop connections while screen is locked are " +
-                "now DISABLED");
-        }
+        if (! this.orig)
+            return;
+        global.backend.get_remote_access_controller().
+            inhibit_remote_access = this.orig;
+        this.orig = null;
+        log("Remote desktop connections while screen is locked are " +
+            "now DISABLED");
     }
 }
 
