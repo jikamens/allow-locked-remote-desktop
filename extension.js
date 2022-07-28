@@ -26,17 +26,12 @@ class Extension {
 
     enable() {
         if (! this.orig) {
-            try {
-                this.orig = global.backend.get_remote_access_controller().
-                    inhibit_remote_access;
-                global.backend.get_remote_access_controller().
-                    inhibit_remote_access = () => {};
-                log("Remote desktop connections while screen is locked are " +
-                    "now ENABLED");
-            }
-            catch (e) {
-                this.orig = null;
-            }
+            this.orig = global.backend.get_remote_access_controller().
+                inhibit_remote_access;
+            global.backend.get_remote_access_controller().
+                inhibit_remote_access = () => {};
+            log("Remote desktop connections while screen is locked are " +
+                "now ENABLED");
         }
     }
 
