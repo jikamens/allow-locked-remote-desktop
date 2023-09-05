@@ -5,7 +5,8 @@ Author: Jonathan Kamens (<jik@kamens.us>)
 Currently supported GNOME shell version(s):
 
 - 3.38, 40, 41 on "GNOME41" branch
-- 42-46 on main
+- 42-44 on "GNOME44" branch
+- 45-46 on main branch
 
 [Home page][homepage] [GNOME Shell Extensions page][extpage]
 
