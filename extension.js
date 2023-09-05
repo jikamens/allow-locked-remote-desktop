@@ -20,7 +20,7 @@
 
 /* exported init */
 
-class Extension {
+export default class Extension {
     constructor() {
     }
 
