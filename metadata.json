@@ -7,5 +7,6 @@
       "45",
       "46"
   ],
-  "session-modes": ["user", "unlock-dialog"]
+  "session-modes": ["user", "unlock-dialog"],
+  "url": "https://github.com/jikamens/allow-locked-remote-desktop/"
 }
