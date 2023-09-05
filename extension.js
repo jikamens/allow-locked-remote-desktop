@@ -21,52 +21,51 @@
 /* exported init */
 
 export default class Extension {
-    constructor() {
-    }
+  constructor() {}
 
-    enable() {
-        // In the normal case this (and the similar `if (! this.orig)` below)
-        // should never be necessary since enable should only be called when
-        // the extension is not already enabled and disable should only be
-        // called when it is enabled.
-        // Nevertheless, it has happened before and certainly will happen again
-        // that these kinds of methods get called when they shouldn't, so the
-        // tiny fraction of a section it takes to check if orig is defined
-        // before proceeding is a perfectly acceptable price to pay for the
-        // benefit of avoiding exacerbating a bug in GNOME shell if/when one
-        // is introduced.
-        if (this.orig)
-            return;
-        this.orig = global.backend.get_remote_access_controller().
-            inhibit_remote_access;
-        global.backend.get_remote_access_controller().
-            inhibit_remote_access = () => {};
-        // Attention extensions.gnome.org reviewers: please stop telling me to
-        // remove the log messages here and below. as I've explained repeatedly
-        // in response to previous reviews, I believe it is important for
-        // security reasons for the user to be aware when this extension is
-        // enabled and disabled. These log messages are intentional and
-        // well-considered, and they are very low-volume since they only
-        // trigger when the screen is locked and unlocked.
-        console.log("Remote desktop connections while screen is locked are " +
-            "now ENABLED");
-    }
+  enable() {
+    // In the normal case this (and the similar `if (! this.orig)` below)
+    // should never be necessary since enable should only be called when the
+    // extension is not already enabled and disable should only be called when
+    // it is enabled.
+    // Nevertheless, it has happened before and certainly will happen again
+    // that these kinds of methods get called when they shouldn't, so the tiny
+    // fraction of a section it takes to check if orig is defined before
+    // proceeding is a perfectly acceptable price to pay for the benefit of
+    // avoiding exacerbating a bug in GNOME shell if/when one is introduced.
+    if (this.orig) return;
+    this.orig =
+      global.backend.get_remote_access_controller().inhibit_remote_access;
+    global.backend.get_remote_access_controller().inhibit_remote_access =
+      () => {};
+    // Attention extensions.gnome.org reviewers: please stop telling me to
+    // remove the log messages here and below. as I've explained repeatedly in
+    // response to previous reviews, I believe it is important for security
+    // reasons for the user to be aware when this extension is enabled and
+    // disabled. These log messages are intentional and well-considered, and
+    // they are very low-volume since they only trigger when the screen is
+    // locked and unlocked.
+    console.log(
+      "Remote desktop connections while screen is locked are " + "now ENABLED",
+    );
+  }
 
-    disable() {
-        // Note that this will not be called when the screen is locked because
-        // "unlock-dialog" is included in "session-modes" in metada.json. This
-        // is necessary because the whole point of this extension is to allow
-        // remote desktop connections when the screen is locked.
-        if (! this.orig)
-            return;
-        global.backend.get_remote_access_controller().
-            inhibit_remote_access = this.orig;
-        this.orig = null;
-        console.log("Remote desktop connections while screen is locked are " +
-                    "now DISABLED");
-    }
+  disable() {
+    // Note that this will not be called when the screen is locked because
+    // "unlock-dialog" is included in "session-modes" in metada.json. This
+    // is necessary because the whole point of this extension is to allow
+    // remote desktop connections when the screen is locked.
+    if (!this.orig) return;
+    global.backend.get_remote_access_controller().inhibit_remote_access =
+      this.orig;
+    this.orig = null;
+    console.log(
+      "Remote desktop connections while screen is locked are " +
+        "now DISABLED",
+    );
+  }
 }
 
 function init() {
-    return new Extension();
+  return new Extension();
 }

@@ -1,20 +1,18 @@
-Allow Locked Remote Desktop GNOME Shell Extension
-=================================================
+# Allow Locked Remote Desktop GNOME Shell Extension
 
 Author: Jonathan Kamens (<jik@kamens.us>)
 
 Currently supported GNOME shell version(s):
 
-* 3.38, 40, 41 on "GNOME41" branch
-* 42-46 on main
+- 3.38, 40, 41 on "GNOME41" branch
+- 42-46 on main
 
 [Home page][homepage] [GNOME Shell Extensions page][extpage]
 
 [homepage]: https://github.com/jikamens/allow-locked-remote-desktop
 [extpage]: https://extensions.gnome.org/extension/4338/allow-locked-remote-desktop/
 
-Purpose
--------
+## Purpose
 
 By default, GNOME shell does not allow remote desktop connections when
 the screen is locked. If the screen locks while a remote desktop
@@ -22,7 +20,7 @@ session is connected, it is disconnected. If a user attempts to
 connect while the screen is locked, the username and password are
 accepted but then the connection is closed.
 
-*There are legitimate security concerns* motivating this default
+_There are legitimate security concerns_ motivating this default
 behavior. In particular, if someone is allowed to connect to the
 screen remotely and unlock it, then the local computer display is
 _also_ unlocked, not just the remote display. Anyone could walk up to
@@ -39,15 +37,14 @@ When this extension is installed and enabled, remote desktop
 connections are allowed while the screen is locked. When it is
 disabled or uninstalled, they aren't. It's that simple!
 
-Credits
--------
+## Credits
+
 This extension uses the workaround suggested by Elliott Sales de
 Andrade [here][workaround].
 
 [workaround]: https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/3212#note_992252
 
-Copyright
----------
+## Copyright
 
 Copyright (c) 2021 Jonathan Kamens (<jik@kamens.us>)
 
