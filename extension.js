@@ -48,7 +48,7 @@ export default class Extension {
         // enabled and disabled. These log messages are intentional and
         // well-considered, and they are very low-volume since they only
         // trigger when the screen is locked and unlocked.
-        log("Remote desktop connections while screen is locked are " +
+        console.log("Remote desktop connections while screen is locked are " +
             "now ENABLED");
     }
 
@@ -62,8 +62,8 @@ export default class Extension {
         global.backend.get_remote_access_controller().
             inhibit_remote_access = this.orig;
         this.orig = null;
-        log("Remote desktop connections while screen is locked are " +
-            "now DISABLED");
+        console.log("Remote desktop connections while screen is locked are " +
+                    "now DISABLED");
     }
 }
 
