@@ -4,7 +4,8 @@
   "version": 4500,
   "uuid": "allowlockedremotedesktop@kamens.us",
   "shell-version": [
-      "45"
+      "45",
+      "46"
   ],
   "session-modes": ["user", "unlock-dialog"]
 }
