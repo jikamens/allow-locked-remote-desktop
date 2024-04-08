@@ -25,12 +25,29 @@ export default class Extension {
     }
 
     enable() {
+        // In the normal case this (and the similar `if (! this.orig)` below)
+        // should never be necessary since enable should only be called when
+        // the extension is not already enabled and disable should only be
+        // called when it is enabled.
+        // Nevertheless, it has happened before and certainly will happen again
+        // that these kinds of methods get called when they shouldn't, so the
+        // tiny fraction of a section it takes to check if orig is defined
+        // before proceeding is a perfectly acceptable price to pay for the
+        // benefit of avoiding exacerbating a bug in GNOME shell if/when one
+        // is introduced.
         if (this.orig)
             return;
         this.orig = global.backend.get_remote_access_controller().
             inhibit_remote_access;
         global.backend.get_remote_access_controller().
             inhibit_remote_access = () => {};
+        // Attention extensions.gnome.org reviewers: please stop telling me to
+        // remove the log messages here and below. as I've explained repeatedly
+        // in response to previous reviews, I believe it is important for
+        // security reasons for the user to be aware when this extension is
+        // enabled and disabled. These log messages are intentional and
+        // well-considered, and they are very low-volume since they only
+        // trigger when the screen is locked and unlocked.
         log("Remote desktop connections while screen is locked are " +
             "now ENABLED");
     }
