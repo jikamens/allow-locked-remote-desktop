@@ -52,7 +52,7 @@ export default class Extension {
 
   disable() {
     // Note that this will not be called when the screen is locked because
-    // "unlock-dialog" is included in "session-modes" in metada.json. This
+    // "unlock-dialog" is included in "session-modes" in metadata.json. This
     // is necessary because the whole point of this extension is to allow
     // remote desktop connections when the screen is locked.
     if (!this.orig) return;
