@@ -46,7 +46,7 @@ export default class Extension {
     // they are very low-volume since they only trigger when the screen is
     // locked and unlocked.
     console.log(
-      "Remote desktop connections while screen is locked are " + "now ENABLED",
+      "Remote desktop connections while screen is locked are now ENABLED",
     );
   }
 
@@ -60,8 +60,7 @@ export default class Extension {
       this.orig;
     this.orig = null;
     console.log(
-      "Remote desktop connections while screen is locked are " +
-        "now DISABLED",
+      "Remote desktop connections while screen is locked are now DISABLED",
     );
   }
 }
