@@ -1,7 +1,7 @@
 {
   "name": "Allow Locked Remote Desktop",
   "description": "Allow remote desktop connections when the screen is locked",
-  "version": 4600,
+  "version": 4700,
   "uuid": "allowlockedremotedesktop@kamens.us",
   "shell-version": ["45", "46", "47"],
   "session-modes": ["user", "unlock-dialog"],
