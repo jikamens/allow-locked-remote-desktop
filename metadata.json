@@ -1,9 +1,9 @@
 {
   "name": "Allow Locked Remote Desktop",
   "description": "Allow remote desktop connections when the screen is locked",
-  "version": 4800,
+  "version": 4900,
   "uuid": "allowlockedremotedesktop@kamens.us",
-  "shell-version": ["45", "46", "47", "48"],
+  "shell-version": ["45", "46", "47", "48", "49"],
   "session-modes": ["user", "unlock-dialog"],
   "url": "https://github.com/jikamens/allow-locked-remote-desktop/"
 }
